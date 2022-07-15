@@ -1,0 +1,17 @@
+<launch>
+
+    <node pkg="wall_follower" type="follow_wall.py" name="follow_wall" output="screen" ></node>
+    <node pkg="wall_follower" type="monitor.py" name="monitor"></node>
+
+
+    <include file="$(find turtlebot3_gazebo)/launch/custom_world.launch">
+        <arg name="model" value="waffle"/>
+        <arg name="world_name_file" value="/home/mohsen/Desktop/catkin_ws/src/wall_follower/worlds/square.world"/>
+        <arg name="x_pos" value="0.0"/>
+        <arg name="y_pos" value="0.0"/>
+        <arg name="z_pos" value="0.0"/>
+        <arg name="yaw" value="1.57"/>
+    </include>
+
+
+</launch>

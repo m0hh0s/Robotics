@@ -1,0 +1,13 @@
+<launch>
+    
+    <node pkg="vfh_navigation" type="vfh_navigator.py" name="vfh_navigator" output="screen">
+        <param name="goal_x" value="-8.0" />
+        <param name="goal_y" value="-8.0" />
+    </node>
+
+    <include file="$(find turtlebot3_gazebo)/launch/custom_world.launch">
+        <arg name="x_pos" value="-2.0"/>
+        <arg name="y_pos" value="8.0"/>
+        <arg name="yaw" value="1.57" />
+    </include>
+</launch>

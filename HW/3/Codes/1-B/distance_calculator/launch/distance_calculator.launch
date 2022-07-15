@@ -1,0 +1,14 @@
+<launch>
+    <node pkg="distance_calculator" type="main_node.py" name="main_node" output="screen"></node>
+    <node pkg="distance_calculator" type="distance_calculator_node.py" name="distance_calculator_node" output="screen"></node>
+
+    <include file="$(find turtlebot3_gazebo)/launch/custom_world.launch">
+        <arg name="model" value="waffle"/>
+        <arg name="world_name_file" value="/home/mohsen/Desktop/catkin_ws/src/distance_calculator/worlds/detect_obstacles.world"/>
+        <arg name="x_pos" value="0.0"/>
+        <arg name="y_pos" value="0.0"/>
+        <arg name="z_pos" value="0.0"/>
+        <arg name="yaw" value="1.57"/>
+    </include>
+
+</launch>
